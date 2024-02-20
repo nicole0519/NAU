@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的购物车</title>
+
+<!-- 引入 Font Awesome 的 CSS 文件 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofGJhuvfOWNDL5lEZZ53lVSB5U1Jl5wC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="./css/styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="./js/tools.js"></script>
+<script>
+   // 获取购物车信息并显示
+   window.onload = function () {
+      const cart = JSON.parse(getCookie('cart')) || [];
+      displayCart(cart);
+    };
+
+   function displayCart(cart) {
+     const cartContainer = document.getElementById('cart-container');
+     cartContainer.innerHTML = '<h1>购物车</h1>';
+
+     if (cart.length === 0) {
+       cartContainer.innerHTML += '<p>你的购物车为空</p>';
+     } else {
+       let totalAmount = 0; // 用于计算购物车总金额
+
+       cart.forEach(item => {
+         const itemTotal = item.quantity * item.price;
+         totalAmount += itemTotal;
+
+         cartContainer.innerHTML += `<div>${item.name} - Quantity: ${item.quantity} - Price: $${item.price.toFixed(2)} - Total: $${itemTotal.toFixed(2)}</div>`;
+       });
+
+       cartContainer.innerHTML += `<p>总金额: $${totalAmount.toFixed(2)}</p>`;
+     }
+   }
+
+
+   // 获取指定名称的Cookie
+    function getCookie(name) {
+      const cookies = document.cookie.split(';');
+      for (let cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.trim().split('=');
+        if (cookieName === name) {
+          return decodeURIComponent(cookieValue);
+        }
+      }
+      return null;
+    }
+</script>
+
+
+
+<style>
+    /* 添加一些基本样式，可以根据需要进行调整 */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .clothing-container {
+      display: flex;   /* 使用 flexbox 布局 */
+      flex-wrap: wrap; /* 如果空间不够，允许换行 */
+    }
+
+   .clothing-item {
+    flex: 0 0 calc(33.33% - 20px); /* 让每个衣物占据 1/3 的宽度，并考虑间距 */
+      margin-right: 20px; /* 为每个衣物之间添加右侧间距 */
+      margin-bottom: 20px;
+    }
+
+   .clothing-image {
+      max-width: 250px;
+      height: 300px;
+    }
+
+    .price-label {
+      font-weight: bold;
+    }
+
+    img {
+    display: inline-block; /* 或者使用 display: inline; */
+  }
+
+  </style>
+</head>
+
+<body>
+
+
+<!-- cart.html 页面的购物车链接 -->
+<a href="coat.html?addToCart=coat">添加外套到购物车</a>
+<a href="shangzhuang.html?addToCart=shangzhuang">添加上装到购物车</a>
+<a href="bottom.html?addToCart=bottom">添加下装到购物车</a>
+<a href="dress.html?addToCart=dress">添加连衣裙到购物车</a>
+<a href="sport.html?addToCart=sport">添加运动装到购物车</a>
+<a href="lifu.html?addToCart=lifu">添加礼服到购物车</a>
+
+<div id="cart-container"></div>
+<div id="total-amount"></div>
+
+</body>
+</html>

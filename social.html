@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>你的页面标题</title>
+    <style>
+        /* 添加的样式 */
+        .post-title {
+            font-size: 1.5em; /* 调整标题大小 */
+        }
+
+        .post-image {
+            max-width: 40%; /* 让图片宽度自适应容器，限制最大宽度为80% */
+            height: auto; /* 保持图片宽高比 */
+            margin-top: 10px; /* 添加上边距 */
+        }
+
+        .like-button {
+            font-size: 1.2em; /* 调整点赞按钮的字体大小 */
+            margin-top: 5px; /* 添加上边距 */
+        }
+    </style>
+    <!-- 其他头部内容... -->
+</head>
+<body>
+<!-- 社区内容 -->
+<section id="community">
+    <h2>社区</h2>
+
+    <!-- 帖子列表区域 -->
+    <div id="post-list" class="post-list">
+        <h3>帖子列表</h3>
+        <!-- 帖子内容将通过 JavaScript 动态添加到这里 -->
+    </div>
+
+    <!-- 个性化推荐区域 -->
+    <div id="personalized-recommendations" class="personalized-recommendations">
+        <h3>个性化推荐</h3>
+        <!-- 推荐内容将通过 JavaScript 动态添加到这里 -->
+    </div>
+
+    <!-- 用户评论区域 -->
+    <div class="comments">
+        <h3>用户评论</h3>
+        <!-- 用户评论列表 -->
+        <ul>
+            <li>用户评论 1</li>
+            <li>用户评论 2</li>
+            <!-- 更多用户评论... -->
+        </ul>
+    </div>
+</section>
+
+<script>
+    // 模拟一些帖子数据
+    var postsData = [
+        {  id: 1, title: '二手衣物购买需要注意什么? ', content: '<a href="./post1.html" class="post-title"></a><img src="./img/首页.jpg" class="post-image" alt="帖子图片">', likes: 0 },
+        { id: 2, title: '旧衣物如何「变现」？', content: '<a href="./post2.html" class="post-title"></a> <img src="./img/social02.jpg" class="post-image" alt="帖子图片">', likes: 0 },
+        // 更多帖子数据...
+    ];
+
+    // 在页面加载时初始化帖子列表
+    window.onload = function () {
+        updatePostList();
+    };
+
+    // 更新帖子列表的函数
+    function updatePostList() {
+        var postListContainer = document.getElementById('post-list');
+
+        // 清空帖子列表
+        postListContainer.innerHTML = '';
+
+        // 遍历帖子数据并添加到列表中
+        for (var i = 0; i < postsData.length; i++) {
+            var post = postsData[i];
+            var postElement = document.createElement('div');
+
+            // 调整帖子内容的排列顺序
+            postElement.innerHTML = '<div><a href="./post' + post.id + '.html" class="post-title">' + post.title + '</a></div>' +
+                '<div>' + post.content + '</div>' +
+                '<button class="like-button" onclick="likePost(' + post.id + ')">点赞 (' + post.likes + ')</button>';
+
+            postListContainer.appendChild(postElement);
+        }
+    }
+
+    // 点赞帖子的函数
+    function likePost(postId) {
+        // 查找对应的帖子
+        var post = postsData.find(function (p) {
+            return p.id === postId;
+        });
+
+        // 点赞数加一
+        post.likes++;
+
+        // 更新帖子列表
+        updatePostList();
+    }
+
+</script>
+
+<!-- 其他页面内容... -->
+</body>
+</html>

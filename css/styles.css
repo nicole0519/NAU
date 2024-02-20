@@ -1,0 +1,68 @@
+/* public/styles.css */
+
+/* Reset some default styles to ensure consistent behavior across browsers */
+body, h1, h2, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply styles to header */
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Apply styles to navigation menu */
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Apply styles to sections */
+section {
+  margin: 20px 0;
+}
+
+/* Apply styles to product listings */
+#product-browsing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Apply styles to footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+

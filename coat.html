@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>上装页面</title>
+
+<!-- 引入 Font Awesome 的 CSS 文件 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofGJhuvfOWNDL5lEZZ53lVSB5U1Jl5wC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="./css/styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="./js/tools.js"></script>
+
+
+
+
+<style>
+    /* 添加一些基本样式，可以根据需要进行调整 */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .clothing-container {
+      display: flex;   /* 使用 flexbox 布局 */
+      flex-wrap: wrap; /* 如果空间不够，允许换行 */
+    }
+
+   .clothing-item {
+    flex: 0 0 calc(33.33% - 20px); /* 让每个衣物占据 1/3 的宽度，并考虑间距 */
+      margin-right: 20px; /* 为每个衣物之间添加右侧间距 */
+      margin-bottom: 20px;
+    }
+
+   .clothing-image {
+      max-width: 250px;
+      height: 300px;
+    }
+
+    .price-label {
+      font-weight: bold;
+    }
+
+    img {
+    display: inline-block; /* 或者使用 display: inline; */
+  }
+
+  button {
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+
+<div class="row">
+    <!-- 第一件衣物 -->
+<div class="col-lg-4">
+    <img class="clothing-image" src="./img/coat1.jpg" alt="2024新款磨毛短袖t恤女中长款宽松休闲过臀上衣加厚打底衫春秋季">
+    <div class="price-label">羊羔毛外套女秋冬加厚软糯慵懒风羊羔绒上衣<i class="fas fa-shopping-cart"></i></div>
+    <p class="price-label">价格：¥189.99</p>
+    <button onclick="addToCart('productCoat1', '羊羔毛外套女秋冬加厚软糯慵懒风羊羔绒上衣', 189.99, 1)">加入购物车</button>
+  </div>
+
+  <!-- 第二件衣物 -->
+  <div class="col-lg-4">
+    <img class="clothing-image" src="./img/coat2.jpg" alt="德绒磨毛圆领长袖t恤女时尚百搭加厚款白色内搭打底衫上衣秋冬季">
+    <div class="price-label">灯芯绒西装外套女春秋2024新款中长款</div>
+    <p class="price-label">价格：¥179.99</p>
+    <button onclick="addToCart('productCoat2', '灯芯绒西装外套女春秋2024新款中长款', 179.99, 1)">加入购物车</button>
+  </div>
+
+  <!-- 第三件衣物 -->
+  <div class="col-lg-4">
+    <img class="clothing-image" src="./img/coat3.jpg" alt="2024新款圆领卫衣女宽">
+    <div class="price-label">短款工装外套女春2024新款宽松小个子立领夹克</div>
+    <p class="price-label">价格：¥149.99</p>
+    <button onclick="addToCart('productCoat3', '短款工装外套女春2024新款宽松小个子立领夹克', 149.99, 1)">加入购物车</button>
+  </div>
+
+  <!-- 第四件衣物 -->
+  <div class="col-lg-4">
+    <img class="clothing-image" src="./img/coat4.jpg" alt="2024新款圆领卫衣女宽松休">
+    <div class="price-label">秋冬新款经典羊毛编织粗花呢短款圆领正肩小个子外套女</div>
+    <p class="price-label">价格：¥399.99</p>
+    <button onclick="addToCart('productCoat4', '短秋冬新款经典羊毛编织粗花呢短款圆领正肩小个子外套女', 399.99, 1)">加入购物车</button>
+  </div>
+
+    <!-- 第五件衣物 -->
+    <div class="col-lg-4">
+        <img class="clothing-image" src="./img/coat5.jpg" alt="2024新款圆">
+        <div class="price-label">复古提花花朵圆领春装毛衣开衫外套女</div>
+        <p class="price-label">价格：¥309.99</p>
+        <button onclick="addToCart('productCoat5', '复古提花花朵圆领春装毛衣开衫外套女', 309.99, 1)">加入购物车</button>
+      </div>
+
+        <!-- 第六件衣物 -->
+  <div class="col-lg-4">
+    <img class="clothing-image" src="./img/coat6.jpg" alt="2024新款圆领卫衣女">
+    <div class="price-label">秋冬新款复古羊毛外套女修身A字单排扣长款正肩大衣</div>
+    <p class="price-label">价格：¥489.99</p>
+    <button onclick="addToCart('productCoat6', '秋冬新款复古羊毛外套女修身A字单排扣长款正肩大衣', 489.99, 1)">加入购物车</button>
+  </div>
+
+  <div id="cart">
+      <a href="cart.html">购物车</a>
+    <ul id="cart-items"></ul>
+    <p id="total">总计: $0</p>
+  </div>
+
+
+
+
+</div>
+</body>
+
+
+</html>

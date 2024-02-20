@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>上装页面</title>
+
+<!-- 引入 Font Awesome 的 CSS 文件 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofGJhuvfOWNDL5lEZZ53lVSB5U1Jl5wC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="./css/styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+<style>
+    /* 添加一些基本样式，可以根据需要进行调整 */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .clothing-container {
+      display: flex;   /* 使用 flexbox 布局 */
+      flex-wrap: wrap; /* 如果空间不够，允许换行 */
+    }
+
+   .clothing-item {
+    flex: 0 0 calc(33.33% - 20px); /* 让每个衣物占据 1/3 的宽度，并考虑间距 */
+      margin-right: 20px; /* 为每个衣物之间添加右侧间距 */
+      margin-bottom: 20px;
+    }
+
+   .clothing-image {
+      max-width: 250px;
+      height: 300px;
+    }
+
+    .price-label {
+      font-weight: bold;
+    }
+
+    img {
+    display: inline-block; /* 或者使用 display: inline; */
+  }
+
+  </style>
+</head>
+<body>
+<h2>   </h2>
+
+
+  <!-- 搜索价格区间的表单 -->
+  <div id="searchForm">
+    <form id="priceRangeForm">
+      <label for="minPrice">最低价格：</label>
+      <input type="number" id="minPrice" name="minPrice">
+
+      <label for="maxPrice">最高价格：</label>
+      <input type="number" id="maxPrice" name="maxPrice">
+
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+  
+
+
+  <!-- 页脚 -->
+  <!-- <footer>
+    <p>&copy; 2024 衣悦时尚</p>
+  </footer>
+</body>
+</html> -->

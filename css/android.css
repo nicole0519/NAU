@@ -1,0 +1,35 @@
+/* 在小屏幕上应用的样式 */
+@media only screen and (max-width: 600px) {
+    /* 添加相应的样式，如调整字体大小、内外边距等 */
+}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                                                         /* 使用 Flexbox 布局示例 */
+                                                                     .container {
+                                                                         display: flex;
+                                                                         flex-direction: column;
+                                                                         align-items: center;
+                                                                     }
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+}
+/* 在小屏幕上隐藏导航栏 */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        display: none;
+    }
+}
+a, button {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    background-color: #eee;
+    border-radius: 5px;
+    display: inline-block;
+}

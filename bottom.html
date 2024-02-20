@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>上装页面</title>
+
+<!-- 引入 Font Awesome 的 CSS 文件 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofGJhuvfOWNDL5lEZZ53lVSB5U1Jl5wC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="./css/styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./js/tools.js"></script>
+<!-- 将Font Awesome文件下载到本地并引入 -->
+<link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
+
+
+
+<style>
+    /* 添加一些基本样式，可以根据需要进行调整 */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .clothing-container {
+      display: flex;   /* 使用 flexbox 布局 */
+      flex-wrap: wrap; /* 如果空间不够，允许换行 */
+    }
+
+   .clothing-item {
+    flex: 0 0 calc(33.33% - 20px); /* 让每个衣物占据 1/3 的宽度，并考虑间距 */
+      margin-right: 20px; /* 为每个衣物之间添加右侧间距 */
+      margin-bottom: 20px;
+    }
+
+   .clothing-image {
+      max-width: 250px;
+      height: 300px;
+    }
+
+    .price-label {
+      font-weight: bold;
+    }
+
+    img {
+    display: inline-block; /* 或者使用 display: inline; */
+  }
+
+  </style>
+</head>
+<body>
+<h2>   </h2>
+
+
+<div class="row">
+    <!-- 第一件衣物 -->
+<div class="col-lg-4">
+    <img class="clothing-image" src="./img/bottom1.jpg" alt="2024新款磨毛短袖t恤女中长款宽松休闲过臀上衣加厚打底衫春秋季">
+    <div class="price-label">冬季新款神仙裤型复古高腰水洗宽松直筒显瘦加绒牛仔长裤 <i class="fas fa-shopping-cart"></i></div>
+    <p class="price-label">价格：¥169.99</p>
+    <button onclick="addToCart('productbottom1', '冬季新款神仙裤型复古高腰水洗宽松直筒显瘦加绒牛仔长裤', 169.99, 1)">加入购物车</button>
+  </div>
+  
+  <!-- 第二件衣物 -->
+  <div class="col-lg-4">
+    <img class="clothing-image" src="./img/bottom2.jpg" alt="德绒磨毛圆领长袖t恤女时尚百搭加厚款白色内搭打底衫上衣秋冬季">
+    <div class="price-label">深灰色针织糯米裤子女春秋窄版阔腿裤宽松直筒运动休闲裤</div>
+    <p class="price-label">价格：¥99.99</p>
+      <button onclick="addToCart('productbottom2', '深灰色针织糯米裤子女春秋窄版阔腿裤宽松直筒运动休闲裤', 99.99, 1)">加入购物车</button>
+  </div>
+  
+  <!-- 第三件衣物 -->
+  <div class="col-lg-4">
+    <img class="clothing-image" src="./img/bottom3.jpg" alt="2024新款圆领卫衣女宽">
+    <div class="price-label">新款豌豆长裤遮肉茧型不挑腿型显瘦通勤斜纹休闲裤</div>
+    <p class="price-label">价格：¥149.99</p>
+      <button onclick="addToCart('productbottom3', '新款豌豆长裤遮肉茧型不挑腿型显瘦通勤斜纹休闲裤', 149.99, 1)">加入购物车</button>
+  </div>
+
+  <!-- 第四件衣物 -->
+  <div class="col-lg-4">
+    <img class="clothing-image" src="./img/bottom4.jpg" alt="2024新款圆领卫衣女宽松休">
+    <div class="price-label">毛呢加绒格子裤女秋冬复古黑色休闲直筒裤显瘦窄版阔腿裤</div>
+    <p class="price-label">价格：¥99.99</p>
+      <button onclick="addToCart('productbottom4', '毛呢加绒格子裤女秋冬复古黑色休闲直筒裤显瘦窄版阔腿裤', 99.99, 1)">加入购物车</button>
+  </div>
+
+    <!-- 第五件衣物 -->
+    <div class="col-lg-4">
+        <img class="clothing-image" src="./img/bottom5.jpg" alt="2024新款圆">
+        <div class="price-label">斜纹宽松显瘦双腰头设计感百搭直筒休闲裤女</div>
+        <p class="price-label">价格：¥209.99</p>
+        <button onclick="addToCart('productbottom5', '斜纹宽松显瘦双腰头设计感百搭直筒休闲裤女', 209.99, 1)">加入购物车</button>
+      </div>
+
+        <!-- 第六件衣物 -->
+  <div class="col-lg-4">
+    <img class="clothing-image" src="./img/bottom6.jpg" alt="2024新款圆领卫衣女">
+    <div class="price-label">显瘦修饰腿三色宽腿水桶型早秋纯棉九分裤</div>
+    <p class="price-label">价格：¥89.99</p>
+      <button onclick="addToCart('productbottom6', '显瘦修饰腿三色宽腿水桶型早秋纯棉九分裤', 89.99, 1)">加入购物车</button>
+  </div>
+
+    <div id="cart">
+        <a href="cart.html">购物车</a>
+        <ul id="cart-items"></ul>
+        <p id="total">总计: $0</p>
+    </div>
+
+
+  </div>
+
+
+
+  <!-- 页脚 -->
+  <!-- <footer>
+    <p>&copy; 2024 衣悦时尚</p>
+  </footer>
+</body>
+</html> -->
